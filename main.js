@@ -190,7 +190,7 @@ var main = function() {
 
         // Increment the start date until its day matches one of the days in daysOfWeek.
         // This ensures an event does not occur on startDate if startDate is not on part of daysOfWeek.
-        var startDate = moment(startEndDate.substring(0, 10), 'MM/DD/YYYY').toDate();
+        var startDate = moment(startEndDate.substring(0, 10), 'DD/MM/YYYY').toDate();
         //startDate.setDate(startDate.getDate() - 1); // Start one day before the start date.
         var days = daysOfWeek.split(',');
         startDate = incrementDateDay(startDate, days);
@@ -199,7 +199,7 @@ var main = function() {
         // be the start time of the last occurrence of an event. However, since the field does not
         // accept a timezone (only UTC time) and America/Toronto is always behind UTC, we can just set the
         // end date one day after and be guaranteed of no other occurrence of this event.
-        var endDate = moment(startEndDate.substring(13, 23), 'MM/DD/YYYY').toDate();
+        var endDate = moment(startEndDate.substring(13, 23), 'DD/MM/YYYY').toDate();
         endDate.setDate(endDate.getDate() + 1);
 
         var iCalContent =
